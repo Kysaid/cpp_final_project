@@ -93,6 +93,20 @@ Matrix Matrix::operator+(const Matrix& other) const {
     return result;
 }
 
+// 标量乘法（成员函数）
+Matrix Matrix::Multiply(double scalar) const {
+    Matrix result(rows_, cols_);
+    for (size_t i = 0; i < rows_ * cols_; ++i) {
+        result.data_[i] = data_[i] * scalar;
+    }
+    return result;
+}
+
+// 标量乘法（运算符重载）
+Matrix Matrix::operator*(double scalar) const {
+    return Multiply(scalar);  // 复用上面的实现
+}
+
 // 12. 输出流（友元）
 std::ostream& operator<<(std::ostream& os, const Matrix& m) {
     os << "Matrix (" << m.rows_ << "x" << m.cols_ << "):" << std::endl;

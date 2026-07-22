@@ -28,5 +28,7 @@ public:
 
     // 运算符重载
     Matrix operator+(const Matrix& other) const;
+    Matrix Multiply(double scalar) const;
+    Matrix operator*(double scalar) const;
     friend std::ostream& operator<<(std::ostream& os, const Matrix& m);
 };
