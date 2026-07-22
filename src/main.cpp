@@ -42,6 +42,11 @@ int main() {
     f.Set(0, 0, 99.0);
     std::cout << "修改 F[0][0] = 99 后:\n" << f << std::endl;
 
+    // 8. 测试标量乘法
+    std::cout << "--- 标量乘法测试 ---" << std::endl;
+    Matrix scaled = a * 2.0;  // 使用重载的 operator*
+    std::cout << "矩阵 A * 2.0:\n" << scaled << std::endl;
+
     std::cout << "=== 测试结束 ===" << std::endl;
     return 0;
 }
